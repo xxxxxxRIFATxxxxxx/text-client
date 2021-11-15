@@ -3,7 +3,6 @@ import './Contact.css';
 import { useForm } from "react-hook-form";
 import { Container } from 'react-bootstrap';
 import Loading from '../Loading/Loading';
-import rocketGif from './rocket.gif';
 
 const Contact = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -14,7 +13,7 @@ const Contact = () => {
     const onSubmit = data => {
         setIsLoading(true);
 
-        fetch("https://lit-tor-41260.herokuapp.com/contact", {
+        fetch("https://pure-brushlands-94522.herokuapp.com/contact", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,92 +35,21 @@ const Contact = () => {
 
     return (
         <Container className="my-4 booking">
-            {/* Contact Banner */}
             <div className="product-banner text-center">
-                <h4 className="display-6 cursive-text product-title">
-                    Get in touch
+                <h4 className="display-6 product-title">
+                    About US
                 </h4>
-                <div>
-                    <div>
-                        <small className="text-muted small-text">
-                            While we’re good with smoke signals, there are simpler ways for us
-                        </small>
-                    </div>
+            </div>
 
-                    <div>
-                        <small className="text-muted small-text">
-                            to get in touch.
-                        </small>
+            <div>
+                <div className="row">
+                    {/* Contact Text*/}
+                    <div className="col col-12 col-sm-12 col-md-12 text-center">
+                        We are often the go-to for a new visitor on a mission. It's where they go when they have a question and truly want to speak to an individual at your organization. They exist to serve the user with the purpose of providing them with information on how they can get in touch with you. How do you say contact us for more information?
+                        If I can be of assistance, please do not hesitate to contact me. If you require any further information, feel free to contact me. If you require any further information, let me know. Please feel free to contact me if you need any further information.
                     </div>
                 </div>
             </div>
-
-            {
-                isLoading
-                    ?
-                    <Loading></Loading>
-                    :
-                    <div>
-                        <div className="row g-4">
-                            {/* Contact GIF */}
-                            <div className="col col-12 col-sm-12 col-md-6">
-                                {
-                                    showAlert
-                                        ?
-                                        <div className="alert alert-success">
-                                            Thank you for contacting us
-                                        </div>
-
-                                        :
-
-                                        <div className="card h-100 border-0 d-flex align-items-center justify-content-center">
-                                            <img className="img-fluid" src={rocketGif} alt="mail" />
-                                        </div>
-                                }
-                            </div>
-
-                            {/* Contact Form */}
-                            <div className="col-12 col-sm-12 col-md-6">
-                                <div className="card h-100">
-                                    <form className="bg-white p-4" onSubmit={handleSubmit(onSubmit)}>
-                                        <h6 className="form-control border-0 fw-bold fs-5 mb-3 booking-title text-center">
-                                            Contact
-                                        </h6>
-
-                                        <div className="mb-3">
-                                            <input
-                                                className="form-control border-0 border-bottom"
-                                                type="text"
-                                                placeholder="Name"
-                                                {...register("name", { required: true })}
-                                            />
-                                        </div>
-
-                                        <div className="mb-3">
-                                            <input
-                                                className="form-control border-0 border-bottom"
-                                                type="email"
-                                                placeholder="Email"
-                                                {...register("email", { required: true })}
-                                            />
-                                        </div>
-
-                                        <div className="mb-3">
-                                            <textarea
-                                                className="form-control border-0 border-bottom"
-                                                type="text"
-                                                placeholder="Message"
-                                                {...register("message", { required: true })}>
-                                            </textarea>
-                                        </div>
-
-                                        <input className="btn btn-info text-white w-100 py-2 fw-normal" type="submit" value="Submit" />
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            }
         </Container>
     );
 };

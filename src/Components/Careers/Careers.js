@@ -13,7 +13,7 @@ const Careers = () => {
     const onSubmit = data => {
         setIsLoading(true);
 
-        fetch("https://lit-tor-41260.herokuapp.com/careers", {
+        fetch("https://pure-brushlands-94522.herokuapp.com/careers", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

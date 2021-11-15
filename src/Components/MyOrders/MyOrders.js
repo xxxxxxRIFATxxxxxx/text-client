@@ -18,7 +18,7 @@ const MyOrders = () => {
         if (confirm) {
             setIsLoading(true);
 
-            fetch(`https://lit-tor-41260.herokuapp.com/orders/${id}`, {
+            fetch(`https://pure-brushlands-94522.herokuapp.com/orders/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -35,7 +35,7 @@ const MyOrders = () => {
 
     // For Load Users Own Orders
     useEffect(() => {
-        fetch(`https://lit-tor-41260.herokuapp.com/orders?email=${user.email}`)
+        fetch(`https://pure-brushlands-94522.herokuapp.com/orders?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyOrders(data);

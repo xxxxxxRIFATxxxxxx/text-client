@@ -9,7 +9,7 @@ const DashboardContent = () => {
 
     // For Users
     useEffect(() => {
-        fetch("https://lit-tor-41260.herokuapp.com/users")
+        fetch("https://pure-brushlands-94522.herokuapp.com/users")
             .then(res => res.json())
             .then(data => {
                 setUsers(data);
@@ -18,7 +18,7 @@ const DashboardContent = () => {
 
     // For Apartments
     useEffect(() => {
-        fetch("https://lit-tor-41260.herokuapp.com/apartments")
+        fetch("https://pure-brushlands-94522.herokuapp.com/apartments")
             .then(res => res.json())
             .then(data => {
                 setApartments(data);
@@ -27,7 +27,7 @@ const DashboardContent = () => {
 
     // For Orders
     useEffect(() => {
-        fetch("https://lit-tor-41260.herokuapp.com/orders")
+        fetch("https://pure-brushlands-94522.herokuapp.com/orders")
             .then(res => res.json())
             .then(data => {
                 setOrders(data);
@@ -36,7 +36,7 @@ const DashboardContent = () => {
 
     // For Reviews
     useEffect(() => {
-        fetch("https://lit-tor-41260.herokuapp.com/reviews")
+        fetch("https://pure-brushlands-94522.herokuapp.com/reviews")
             .then(res => res.json())
             .then(data => {
                 setReviews(data);

@@ -16,7 +16,7 @@ const MakeAdmin = () => {
     const onSubmit = data => {
         setIsLoading(true);
 
-        fetch(`https://lit-tor-41260.herokuapp.com/users/admin?email=${user.email}`, {
+        fetch(`https://pure-brushlands-94522.herokuapp.com/users/admin?email=${user.email}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

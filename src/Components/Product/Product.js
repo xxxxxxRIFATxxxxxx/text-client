@@ -5,76 +5,57 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const Product = props => {
-    const { _id, name, price, image, description, sqft, beds, bath } = props.product;
+    const { _id, name, price, image, description, beds, bath } = props.product;
 
     return (
         <div className="col product">
-            <NavLink to={`/booking/${_id}`} className="text-decoration-none text-black">
-                <div className="card h-100">
-                    <img src={image} className="card-img-top" alt={name} />
-                    <div className="card-body">
-                        <h4 className="card-title cursive-text text-center">
-                            {name}
-                        </h4>
+            <div className="card h-100 border-0 shadow">
+                <img src={image} className="card-img-top" alt={name} />
+                <div className="card-body">
+                    <h4 className="card-title cursive-text text-center">
+                        {name}
+                    </h4>
 
-                        <p className="card-text more-small-text text-muted text-justify">
-                            {description.slice(0, 200)}
-                        </p>
+                    <p className="card-text">
+                        {description}
+                    </p>
 
-                        <div className="row mb-2">
-                            <div className="col-6">
-                                <div className="more-small-text text-muted">
-                                    <span>Price: </span>
-                                    <span className="fw-bold">${price}</span>
-                                </div>
-                            </div>
-
-                            <div className="col-6">
-                                <div className="text-end me-1">
-                                    <div className="more-small-text text-muted">
-                                        <span>Sqft: </span>
-                                        <span className="fw-bold">{sqft}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="row">
-                            <div className="col-6">
-                                <FontAwesomeIcon icon={faStar} className="more-small-text text-warning me-1" />
-                                <FontAwesomeIcon icon={faStar} className="more-small-text text-warning me-1" />
-                                <FontAwesomeIcon icon={faStar} className="more-small-text text-warning me-1" />
-                                <FontAwesomeIcon icon={faStar} className="more-small-text text-warning me-1" />
-                                <FontAwesomeIcon icon={faStar} className="more-small-text text-warning me-1" />
-                            </div>
-
-                            <div className="col-6">
-                                <div className="text-end d-flex justify-content-end">
-                                    <div className="text-end me-1">
-                                        <div className="more-small-text text-muted">
-                                            <span>Bed: </span>
-                                            <span className="fw-bold">{beds}</span>
-                                        </div>
-                                    </div>
-
-                                    <div className="text-end me-1">
-                                        <div className="more-small-text text-muted">
-                                            <span>Bath: </span>
-                                            <span className="fw-bold">{bath}</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div className="row mb-2">
+                        <div className="col-12 text-center">
+                            <div className="text-dark">
+                                <span>Price: </span>
+                                <span className="fw-bold">${price}</span>
                             </div>
                         </div>
                     </div>
 
-                    <div className="card-footer border-0 bg-white p-0">
-                        <NavLink to={`/booking/${_id}`} className="btn btn-info text-white px-4 w-100 rounded-0 order-btn">
-                            BOOK NOW
-                        </NavLink>
+                    <div className="row">
+                        <div className="col-12 text-center">
+                            <div className="d-flex justify-content-center">
+                                <div className="text-end me-1">
+                                    <div className="text-dark">
+                                        <span>Bed Room: </span>
+                                        <span className="fw-bold">{beds}</span>
+                                    </div>
+                                </div>
+
+                                <div className="text-end me-1">
+                                    <div className="text-dark">
+                                        <span>Bath Room: </span>
+                                        <span className="fw-bold">{bath}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </NavLink>
+
+                <div className="card-footer border-0 bg-white p-0 text-center my-3">
+                    <NavLink to={`/booking/${_id}`} className="btn btn-danger text-white px-4 text-center order-btn">
+                        Order
+                    </NavLink>
+                </div>
+            </div>
         </div>
     );
 };

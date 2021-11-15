@@ -15,7 +15,7 @@ const AddProduct = () => {
         data.rating = parseInt(data.rating);
         setIsLoading(true);
 
-        fetch("https://lit-tor-41260.herokuapp.com/apartments", {
+        fetch("https://pure-brushlands-94522.herokuapp.com/apartments", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

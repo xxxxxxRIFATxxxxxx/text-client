@@ -9,39 +9,37 @@ const Header = () => {
     const history = useHistory();
 
     return (
-        <Navbar bg="light" expand="xl" className="header">
+        <Navbar bg="danger" expand="xl" className="header text-white">
             <Container>
                 <Navbar.Brand>
-                    <NavLink to="/" className="cursive-text text-decoration-none text-info fs-3">
-                        apartment
+                    <NavLink to="/" className="text-decoration-none text-white fs-3">
+                        Apartment Website
                     </NavLink>
                 </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
-                        <NavLink className="btn" to="/">Home</NavLink>
-                        <NavLink className="btn" to="/explore">Explore</NavLink>
-                        <NavLink className="btn" to="/about">About</NavLink>
-                        <NavLink className="btn" to="/careers">Careers</NavLink>
+                    <Nav className="me-auto">
+                        <NavLink className="btn text-white" to="/">Home</NavLink>
+                        <NavLink className="btn text-white" to="/explore">Explore</NavLink>
                         {
                             user.email
                                 ?
                                 <>
-                                    <NavLink className="btn fw-bold text-info" to="/dashboard">
+                                    <NavLink className="btn fw-bold text-white" to="/dashboard">
                                         {user.displayName}
                                     </NavLink>
 
-                                    <NavLink className="btn btn-info px-4 text-white" to="/dashboard">
+                                    <NavLink className="btn px-4 text-white" to="/dashboard">
                                         Dashboard
                                     </NavLink>
 
-                                    <button onClick={() => logout(history)} className="btn btn-secondary btn-padding">
+                                    <button onClick={() => logout(history)} className="btn text-white btn-padding">
                                         Logout
                                     </button>
                                 </>
                                 :
-                                <NavLink className="btn btn-info text-white fw-bold px-5" to="/login">
+                                <NavLink className="btn btn-success text-white fw-bold px-5" to="/login">
                                     Login
                                 </NavLink>
                         }

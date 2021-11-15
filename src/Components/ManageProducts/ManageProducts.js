@@ -16,7 +16,7 @@ const ManageProducts = () => {
         if (confirm) {
             setIsLoading(true);
 
-            fetch(`https://lit-tor-41260.herokuapp.com/apartments/${id}`, {
+            fetch(`https://pure-brushlands-94522.herokuapp.com/apartments/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const ManageProducts = () => {
 
     // For Load All Products
     useEffect(() => {
-        fetch(`https://lit-tor-41260.herokuapp.com/apartments`)
+        fetch(`https://pure-brushlands-94522.herokuapp.com/apartments`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data);

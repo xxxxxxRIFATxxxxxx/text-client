@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
         if (confirm) {
             setIsLoading(true);
 
-            fetch(`https://lit-tor-41260.herokuapp.com/orders/${id}`, {
+            fetch(`https://pure-brushlands-94522.herokuapp.com/orders/${id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
@@ -36,14 +36,14 @@ const ManageAllOrders = () => {
         setIsLoading(true);
         let data = {};
 
-        fetch(`https://lit-tor-41260.herokuapp.com/orders?id=${id}`)
+        fetch(`https://pure-brushlands-94522.herokuapp.com/orders?id=${id}`)
             .then(res => res.json())
             .then(result => {
                 result.status = "Approved";
                 data = result;
 
                 // Update Data
-                fetch(`https://lit-tor-41260.herokuapp.com/orders/${id}`, {
+                fetch(`https://pure-brushlands-94522.herokuapp.com/orders/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ const ManageAllOrders = () => {
 
     // For Load Users Own Orders
     useEffect(() => {
-        fetch(`https://lit-tor-41260.herokuapp.com/orders`)
+        fetch(`https://pure-brushlands-94522.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => {
                 setOrders(data);

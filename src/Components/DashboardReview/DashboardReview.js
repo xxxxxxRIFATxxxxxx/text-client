@@ -19,7 +19,7 @@ const DashboardReview = () => {
         data.rating = parseInt(data.rating);
         setIsLoading(true);
 
-        fetch("https://lit-tor-41260.herokuapp.com/reviews", {
+        fetch("https://pure-brushlands-94522.herokuapp.com/reviews", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

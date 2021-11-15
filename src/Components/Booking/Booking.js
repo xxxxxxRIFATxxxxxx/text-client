@@ -20,7 +20,7 @@ const Booking = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`https://lit-tor-41260.herokuapp.com/apartments/${id}`)
+        fetch(`https://pure-brushlands-94522.herokuapp.com/apartments/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data);
@@ -41,7 +41,7 @@ const Booking = () => {
         data.status = "Pending";
         setIsLoading(true);
 
-        fetch("https://lit-tor-41260.herokuapp.com/orders", {
+        fetch("https://pure-brushlands-94522.herokuapp.com/orders", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

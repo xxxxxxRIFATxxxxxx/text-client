@@ -36,7 +36,7 @@ const useFirebase = () => {
                     displayName: result.user.displayName,
                 };
 
-                fetch("https://lit-tor-41260.herokuapp.com/users", {
+                fetch("https://pure-brushlands-94522.herokuapp.com/users", {
                     method: "PUT",
                     headers: {
                         'Content-Type': 'application/json'
@@ -95,7 +95,7 @@ const useFirebase = () => {
                     setErrorMessage(error.message);
                 });
 
-                fetch("https://lit-tor-41260.herokuapp.com/users", {
+                fetch("https://pure-brushlands-94522.herokuapp.com/users", {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json'
@@ -154,7 +154,7 @@ const useFirebase = () => {
 
     // Check User Role
     useEffect(() => {
-        fetch(`https://lit-tor-41260.herokuapp.com/users/${user.email}`)
+        fetch(`https://pure-brushlands-94522.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => setIsAdmin(data));
     }, [user.email])

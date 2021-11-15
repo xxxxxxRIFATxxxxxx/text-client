@@ -9,7 +9,7 @@ const Reviews = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://lit-tor-41260.herokuapp.com/reviews")
+        fetch("https://pure-brushlands-94522.herokuapp.com/reviews")
             .then(res => res.json())
             .then(data => {
                 const reverseData = data.slice().reverse();
@@ -20,30 +20,15 @@ const Reviews = () => {
 
     return (
         <div className="mb-4">
-            {/* Reviews Banner */}
             <div className="reviews-banner text-center">
-                <h4 className="display-6 cursive-text reviews-title">
-                    Reviews
+                <h4 className="display-6 reviews-title">
+                    Our Reviews
                 </h4>
-                <div>
-                    <div>
-                        <small className="text-muted small-text">
-                            See what our client's say about our luxury apartments and service so that you can know about
-                        </small>
-                    </div>
-
-                    <div>
-                        <small className="text-muted small-text">
-                            our real service and our apartments.
-                        </small>
-                    </div>
-                </div>
             </div>
 
-            {/* Reviews List */}
+            {/* Reviews */}
             <Container>
-                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    {/* For Loading Screen */}
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
                     {isLoading ? <Loading></Loading> : null}
 
                     {reviews.map(review => <Review key={review._id} review={review} />)}
