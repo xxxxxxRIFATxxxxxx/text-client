@@ -1,0 +1,14 @@
+.booking form {
+    width: 100%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .booking form {
+        width: 100%;
+    }
+
+    .booking .booking-title {
+        font-size: 18px !important;
+    }
+}

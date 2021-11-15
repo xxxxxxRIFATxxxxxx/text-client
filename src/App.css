@@ -1,0 +1,19 @@
+.cursive-text {
+  font-family: 'Playball', cursive;
+}
+
+.small-text {
+  font-size: 14px;
+}
+
+.more-small-text {
+  font-size: 12px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-justify {
+  text-align: justify;
+}

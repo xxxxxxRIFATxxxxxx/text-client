@@ -1,0 +1,36 @@
+.my-orders table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.my-orders th {
+    color: rgb(63, 62, 62);
+    font-size: 14px;
+}
+
+.my-orders td {
+    font-size: 13px;
+}
+  
+.my-orders th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.my-orders tr {
+    cursor: pointer;
+}
+
+.my-orders tr:hover {
+    background-color: #f2f2f2;
+}
+
+.my-orders tr:nth-child(even){
+    background-color: #f2f2f2
+}
+
+.my-orders .table-container {
+    overflow-x: auto;
+}

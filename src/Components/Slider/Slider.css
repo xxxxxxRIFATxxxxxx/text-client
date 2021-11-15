@@ -1,0 +1,13 @@
+.slider .slider-text-container {
+    margin-top: -6px;
+}
+
+@media only screen and (max-width: 599px) {
+    .slider .hide-slider {
+        display: none !important;
+    }
+
+    .slider .slider-title {
+        font-size: 26px;
+    }
+}
