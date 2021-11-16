@@ -2,8 +2,6 @@ import React from 'react';
 import useAuth from '../../Hooks/useAuth';
 import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import loginGif from './login.gif';
-import policeGif from './police.gif';
 import './Login.css';
 
 const Login = () => {
@@ -22,22 +20,9 @@ const Login = () => {
     };
 
     return (
-        <div className="login blue-bg">
+        <div className="login">
             <div className="container login">
-                {/* Error Message */}
-                {errorMessage ? <div className="alert alert-danger text-center mb-5">
-                    {errorMessage ? <h6 className="text-danger">{errorMessage}</h6> : null}
-                </div> : null}
-
-                <h1 className="cursive-text text-white text-center mb-5">Who are you?</h1>
-
-                <div className="row row-cols-1 row-cols-md-3 g-4">
-                    {/* GIF Image */}
-                    <div className="col">
-                        <img className="img-fluid" src={loginGif} alt="login" />
-                    </div>
-
-                    {/* Login Form */}
+                <div className="row row-cols-1 row-cols-md-1 g-4">
                     <div className="col">
                         <div className="card h-100">
                             <form className="bg-white p-4" onSubmit={handleSubmit(onSubmit)}>
@@ -63,21 +48,19 @@ const Login = () => {
                                     />
                                 </div>
 
-                                <input className="btn btn-info text-white w-100 py-2 fw-normal" type="submit" value="Login" />
+                                <input className="btn btn-danger text-white w-100 py-2 fw-normal" type="submit" value="Login" />
 
-                                <div className="form-text mt-1">
-                                    Don't have account?
-                                    <NavLink className="text-info text-decoration-none ms-1" to="/signup">
-                                        Registration
+                                <div className="form-text mt-1 text-center">
+                                    <NavLink className="text-danger text-decoration-none ms-1 fs-2" to="/signup">
+                                        Sign Up
                                     </NavLink>
                                 </div>
                             </form>
-                        </div>
-                    </div>
 
-                    {/* GIF Image */}
-                    <div className="col">
-                        <img className="img-fluid" src={policeGif} alt="login" />
+                            {errorMessage ? <div className="alert alert-danger text-center mb-5">
+                                {errorMessage ? <h6 className="text-danger">{errorMessage}</h6> : null}
+                            </div> : null}
+                        </div>
                     </div>
                 </div>
             </div>

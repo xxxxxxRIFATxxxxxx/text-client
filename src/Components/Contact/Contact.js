@@ -1,38 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Contact.css';
-import { useForm } from "react-hook-form";
 import { Container } from 'react-bootstrap';
-import Loading from '../Loading/Loading';
 
 const Contact = () => {
-    const [isLoading, setIsLoading] = useState(false);
-    const [showAlert, setShowAlert] = useState(false)
-
-    // For Handle Form
-    const { register, handleSubmit, reset } = useForm();
-    const onSubmit = data => {
-        setIsLoading(true);
-
-        fetch("https://pure-brushlands-94522.herokuapp.com/contact", {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(result => {
-                if (result.insertedId) {
-                    setIsLoading(false);
-                    reset();
-                    setShowAlert(true);
-                    setTimeout(() => {
-                        setShowAlert(false);
-                    }, 3000);
-                };
-            });
-    };
-
     return (
         <Container className="my-4 booking">
             <div className="product-banner text-center">

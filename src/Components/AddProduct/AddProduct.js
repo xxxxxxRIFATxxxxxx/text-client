@@ -3,7 +3,6 @@ import './AddProduct.css';
 import { useForm } from "react-hook-form";
 import { Container } from 'react-bootstrap';
 import Loading from '../Loading/Loading';
-import workingGif from './working.gif';
 
 const AddProduct = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -44,13 +43,23 @@ const AddProduct = () => {
                     :
                     <div>
                         <div className="row g-4">
+                            <div className="col col-12 col-sm-12 col-md-4">
+                                {
+                                    showAlert
+                                        ?
+                                        <div className="alert alert-success">
+                                            Product Added
+                                        </div>
+
+                                        :
+                                        null
+                                }
+                            </div>
+
                             {/* Add Product Form */}
-                            <div className="col-12 col-sm-12 col-md-6">
+                            <div className="col-12 col-sm-12 col-md-8">
                                 <div className="card h-100">
                                     <form className="bg-white p-4" onSubmit={handleSubmit(onSubmit)}>
-                                        <h6 className="form-control border-0 fw-bold fs-5 mb-3 booking-title text-center">
-                                            Create Product
-                                        </h6>
 
                                         <div className="mb-3">
                                             <input
@@ -91,15 +100,6 @@ const AddProduct = () => {
                                         <div className="mb-3">
                                             <input
                                                 className="form-control border-0 border-bottom"
-                                                type="text"
-                                                placeholder="Square Feet"
-                                                {...register("sqft", { required: true })}
-                                            />
-                                        </div>
-
-                                        <div className="mb-3">
-                                            <input
-                                                className="form-control border-0 border-bottom"
                                                 type="number"
                                                 placeholder="Beds"
                                                 {...register("beds", { required: true })}
@@ -115,26 +115,9 @@ const AddProduct = () => {
                                             />
                                         </div>
 
-                                        <input className="btn btn-info text-white w-100 py-2 fw-normal" type="submit" value="Add" />
+                                        <input className="btn btn-danger text-white w-100 py-2 fw-normal" type="submit" value="Add" />
                                     </form>
                                 </div>
-                            </div>
-
-                            {/* Add Product GIF */}
-                            <div className="col col-12 col-sm-12 col-md-6">
-                                {
-                                    showAlert
-                                        ?
-                                        <div className="alert alert-success">
-                                            Product Added successfully
-                                        </div>
-
-                                        :
-
-                                        <div className="card h-100 border-0 d-flex align-items-center justify-content-center">
-                                            <img className="img-fluid" src={workingGif} alt="working man" />
-                                        </div>
-                                }
                             </div>
                         </div>
                     </div>

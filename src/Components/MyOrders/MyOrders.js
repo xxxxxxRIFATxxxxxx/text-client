@@ -45,8 +45,6 @@ const MyOrders = () => {
 
     return (
         <Container className="my-orders my-5">
-            <h2 className="pink-text cursive-text display-6 text-center mb-4">My Orders</h2>
-
             {/* For Loading Spinner */}
             {isLoading ?
                 <Loading></Loading>
@@ -56,10 +54,6 @@ const MyOrders = () => {
                         {/* Table Header */}
                         <tr>
                             <th>Name</th>
-                            <th>Order ID</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Address</th>
                             <th>Apartment Name</th>
                             <th>Price</th>
                             <th>Status</th>
@@ -76,22 +70,6 @@ const MyOrders = () => {
                                         </td>
 
                                         <td>
-                                            {order._id}
-                                        </td>
-
-                                        <td>
-                                            {order.email}
-                                        </td>
-
-                                        <td>
-                                            {order.phone}
-                                        </td>
-
-                                        <td>
-                                            {order.address}
-                                        </td>
-
-                                        <td>
                                             {order.apartmentName}
                                         </td>
 
@@ -103,9 +81,9 @@ const MyOrders = () => {
                                             {
                                                 order.status === "Pending"
                                                     ?
-                                                    <span className="badge bg-warning fs-6 py-2">{order.status}</span>
+                                                    <span className="fs-6 py-2">{order.status}</span>
                                                     :
-                                                    <span className="badge bg-success fs-6 py-2">{order.status}</span>
+                                                    <span className="fs-6 py-2">{order.status}</span>
                                             }
                                         </td>
 

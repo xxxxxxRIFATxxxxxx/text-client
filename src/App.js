@@ -19,8 +19,6 @@ import Explore from './Components/Explore/Explore';
 import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp';
 import Dashboard from './Components/Dashboard/Dashboard';
-import About from './Components/About/About';
-import Careers from './Components/Careers/Careers';
 
 function App() {
   return (
@@ -36,15 +34,6 @@ function App() {
           <Route exact path="/explore">
             <Explore />
           </Route>
-
-          <Route exact path="/about">
-            <About />
-          </Route>
-
-          <Route exact path="/careers">
-            <Careers />
-          </Route>
-
 
           <Route exact path="/login">
             <Login />

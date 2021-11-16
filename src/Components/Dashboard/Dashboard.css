@@ -5,28 +5,28 @@
 
 /* Text Size */
 .small-text {
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .more-small-text {
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .super-text {
-    font-size: 8px;
+    font-size: 12px;
 }
 
 /* Border Radius */
 .square-radius {
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .more-square-radius {
-    border-radius: 15px;
+    border-radius: 25px;
 }
 
 .small-radius {
-    border-radius: 2px;
+    border-radius: 10px;
 }
 
 /* Modal */
@@ -37,7 +37,7 @@
 }
 
 .blue-border-bottom {
-    border-bottom: 1px solid #0DCAF0;
+    border-bottom: 1px solid rgb(204, 63, 63);
 }
 
 .modal .btn-close:focus, .modal .modal-body .btn:focus {
@@ -68,7 +68,7 @@ input[type="text"]:focus {
 
 /* For Side Item Active */
 .side-item-active {
-    background-color: #0DCAF0;
+    background-color: rgb(204, 63, 63);;
     border-radius: 5px;
 }
 
@@ -77,12 +77,12 @@ input[type="text"]:focus {
 }
 
 .side-item-active .side-icon {
-    color: #0DCAF0;
+    color: rgb(204, 63, 63);;
 }
 
 /* For Side Item Hover */
 .nav-item:hover {
-    background-color: #0DCAF0;
+    background-color: rgb(204, 63, 63);;
     border-radius: 5px;
 }
 

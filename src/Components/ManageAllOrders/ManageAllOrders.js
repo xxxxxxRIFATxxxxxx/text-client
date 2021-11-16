@@ -71,10 +71,6 @@ const ManageAllOrders = () => {
 
     return (
         <Container className="orders my-5">
-            <h2 className="pink-text cursive-text display-6 text-center mb-4">
-                Manage all orders
-            </h2>
-
             {
                 isLoading
                     ?
@@ -85,11 +81,7 @@ const ManageAllOrders = () => {
                             {/* Table Header */}
                             <tr>
                                 <th>Name</th>
-                                <th>Order ID</th>
                                 <th>Email</th>
-                                <th>Phone</th>
-                                <th>Date</th>
-                                <th>Tour Name</th>
                                 <th>Price</th>
                                 <th>Status</th>
                                 <th colSpan="2" className="text-center">Action</th>
@@ -105,23 +97,7 @@ const ManageAllOrders = () => {
                                             </td>
 
                                             <td>
-                                                {order._id}
-                                            </td>
-
-                                            <td>
                                                 {order.email}
-                                            </td>
-
-                                            <td>
-                                                {order.phone}
-                                            </td>
-
-                                            <td>
-                                                {order.date}
-                                            </td>
-
-                                            <td>
-                                                {order.tourName}
                                             </td>
 
                                             <td>
@@ -132,9 +108,9 @@ const ManageAllOrders = () => {
                                                 {
                                                     order.status === "Pending"
                                                         ?
-                                                        <span className="badge bg-warning fs-6 py-2">{order.status}</span>
+                                                        <span className="fs-6 py-2">{order.status}</span>
                                                         :
-                                                        <span className="badge bg-success fs-6 py-2">{order.status}</span>
+                                                        <span className="fs-6 py-2">{order.status}</span>
                                                 }
                                             </td>
 

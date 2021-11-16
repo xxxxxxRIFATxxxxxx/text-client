@@ -3,17 +3,13 @@ import './DashboardReview.css';
 import { useForm } from "react-hook-form";
 import { Container } from 'react-bootstrap';
 import Loading from '../Loading/Loading';
-import writingGif from './writing.gif';
 import useAuth from '../../Hooks/useAuth';
 
 const DashboardReview = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [showAlert, setShowAlert] = useState(false);
-
-    // For User
     const { user } = useAuth();
 
-    // For Handle Form
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
         data.rating = parseInt(data.rating);
@@ -48,14 +44,23 @@ const DashboardReview = () => {
                     :
                     <div>
                         <div className="row g-4">
+                            <div className="col col-12 col-sm-12 col-md-3">
+                                {
+                                    showAlert
+                                        ?
+                                        <div className="alert alert-success">
+                                            Review posted
+                                        </div>
+
+                                        :
+                                        null
+                                }
+                            </div>
+
                             {/* Add Review Form */}
-                            <div className="col-12 col-sm-12 col-md-6">
+                            <div className="col-12 col-sm-12 col-md-9">
                                 <div className="card h-100">
                                     <form className="bg-white p-4" onSubmit={handleSubmit(onSubmit)}>
-                                        <h6 className="form-control border-0 fw-bold fs-5 mb-3 booking-title text-center">
-                                            Post a Review
-                                        </h6>
-
                                         <div className="mb-3">
                                             <input
                                                 className="form-control border-0 border-bottom"
@@ -63,17 +68,6 @@ const DashboardReview = () => {
                                                 placeholder="Name"
                                                 value={user.displayName}
                                                 {...register("name", { required: true })}
-                                                readOnly
-                                            />
-                                        </div>
-
-                                        <div className="mb-3">
-                                            <input
-                                                className="form-control border-0 border-bottom"
-                                                type="email"
-                                                placeholder="example@email.com"
-                                                value={user.email}
-                                                {...register("email", { required: true })}
                                                 readOnly
                                             />
                                         </div>
@@ -100,26 +94,9 @@ const DashboardReview = () => {
                                             </textarea>
                                         </div>
 
-                                        <input className="btn btn-info text-white w-100 py-2 fw-normal" type="submit" value="Post" />
+                                        <input className="btn btn-danger text-white w-100 py-2 fw-normal" type="submit" value="Post" />
                                     </form>
                                 </div>
-                            </div>
-
-                            {/* Service GIF */}
-                            <div className="col col-12 col-sm-12 col-md-6">
-                                {
-                                    showAlert
-                                        ?
-                                        <div className="alert alert-success">
-                                            Review posted successfully
-                                        </div>
-
-                                        :
-
-                                        <div className="card h-100 border-0 d-flex align-items-center justify-content-center">
-                                            <img className="img-fluid" src={writingGif} alt="working man" />
-                                        </div>
-                                }
                             </div>
                         </div>
                     </div>

@@ -29,10 +29,6 @@ const Dashboard = () => {
                 {/* <!-- Side Bar --> */}
                 <div className="col-12 col-sm-12 col-md-12 col-lg-3">
                     <div className="card h-100 bg-transparent border-0">
-                        <h1 className="fs-3 fst-italic text-center">
-                            <span className="text-info cursive-text">Dashboard</span>
-                        </h1>
-
                         <div className="mt-5">
                             <ul className="nav flex-column">
                                 {/* <!-- Dashboard --> */}
@@ -41,7 +37,7 @@ const Dashboard = () => {
                                         // For Admin
                                         <>
                                             {/* Overview */}
-                                            <li className="nav-item p-1 side-item-active mb-3">
+                                            <li className="nav-item p-1 side-item-active mb-3 bg-danger">
                                                 <NavLink to={url}
                                                     className="nav-link d-flex justify-content-start align-items-center side-bar-icon">
 
@@ -51,7 +47,7 @@ const Dashboard = () => {
                                             </li>
 
                                             {/* Manage All Orders */}
-                                            <li className="nav-item p-1 side-item-active mb-3">
+                                            <li className="nav-item p-1 side-item-active mb-3 bg-danger">
                                                 <NavLink to={`${url}/manageAllOrders`}
                                                     className="nav-link d-flex justify-content-start align-items-center side-bar-icon">
 
@@ -61,7 +57,7 @@ const Dashboard = () => {
                                             </li>
 
                                             {/* Add Product */}
-                                            <li className="nav-item p-1 side-item-active mb-3">
+                                            <li className="nav-item p-1 side-item-active mb-3 bg-danger">
                                                 <NavLink to={`${url}/addProduct`}
                                                     className="nav-link d-flex justify-content-start align-items-center side-bar-icon">
 
@@ -71,7 +67,7 @@ const Dashboard = () => {
                                             </li>
 
                                             {/* Make Admin */}
-                                            <li className="nav-item p-1 side-item-active mb-3">
+                                            <li className="nav-item p-1 side-item-active mb-3 bg-danger">
                                                 <NavLink to={`${url}/makeAdmin`}
                                                     className="nav-link d-flex justify-content-start align-items-center side-bar-icon">
 
@@ -81,7 +77,7 @@ const Dashboard = () => {
                                             </li>
 
                                             {/* Manage Products */}
-                                            <li className="nav-item p-1 side-item-active mb-3">
+                                            <li className="nav-item p-1 side-item-active mb-3 bg-danger">
                                                 <NavLink to={`${url}/manageProducts`}
                                                     className="nav-link d-flex justify-content-start align-items-center side-bar-icon">
 
@@ -95,7 +91,7 @@ const Dashboard = () => {
                                         // For Normal User
                                         <>
                                             {/* <!-- My Orders --> */}
-                                            <li className="nav-item p-1 mb-3 side-item-active">
+                                            <li className="nav-item p-1 mb-3 side-item-active bg-danger">
                                                 <NavLink to={url}
                                                     className="nav-link d-flex justify-content-start align-items-center side-bar-icon">
 
@@ -105,7 +101,7 @@ const Dashboard = () => {
                                             </li>
 
                                             {/* <!-- Payment --> */}
-                                            <li className="nav-item p-1 mb-3 side-item-active">
+                                            <li className="nav-item p-1 mb-3 side-item-active bg-danger">
                                                 <NavLink to={`${url}/payment`}
                                                     className="nav-link d-flex justify-content-start align-items-center side-bar-icon">
 
@@ -115,7 +111,7 @@ const Dashboard = () => {
                                             </li>
 
                                             {/* <!-- Review --> */}
-                                            <li className="nav-item p-1 mb-3 side-item-active">
+                                            <li className="nav-item p-1 mb-3 side-item-active bg-danger">
                                                 <NavLink to={`${url}/dashboardReview`}
                                                     className="nav-link d-flex justify-content-start align-items-center side-bar-icon">
 
@@ -125,16 +121,16 @@ const Dashboard = () => {
                                             </li>
                                         </>
                                 }
+
+                                {/* <!-- Logout --> */}
+                                <button
+                                    onClick={() => logout(history)}
+                                    className="btn btn-danger text-white d-flex justify-content-center align-items-center logout-btn mt-4">
+                                    <i className="fas fa-sign-out-alt fs-5 me-2"></i>
+                                    <span>Logout</span>
+                                </button>
                             </ul>
                         </div>
-
-                        {/* <!-- Logout --> */}
-                        <button
-                            onClick={() => logout(history)}
-                            className="btn btn-info text-white d-flex justify-content-center align-items-center logout-btn mt-4">
-                            <i className="fas fa-sign-out-alt fs-5 me-2"></i>
-                            <span>Logout</span>
-                        </button>
                     </div>
                 </div>
 
